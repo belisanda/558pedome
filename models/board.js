@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import mongoose from 'mongoose';
+const _ = require('lodash');
+const mongoose = require('mongoose');
 
 const BoardSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
