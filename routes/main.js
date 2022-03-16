@@ -1,7 +1,7 @@
-import express from 'express';
+const express = require('express');
 const TeamModel = require('../models/team');
-import _ from 'lodash';
-import mongoose from 'mongoose';
+const _ = require('lodash');
+const mongoose = require('mongoose');
 
 const DB_USER = 'u3r7nzd7eufbzxjivv8s';
 const DB_PASSWORD = '3CVg9XH4Efhd6kVTVk3p';

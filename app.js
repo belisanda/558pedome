@@ -1,10 +1,10 @@
-import express from 'express';
+const express = require('express');
 const Route = require('./routes/main');
-import nunjucks from 'nunjucks';
-import morgan from 'morgan';
+const nunjucks = require('nunjucks');
+const morgan = require('morgan');
 const TeamModel = require('./models/team');
-import bodyParser from 'body-parser';
-import _ from 'lodash';
+const bodyParser = require('body-parser');
+const _ = require('lodash');
 
 const PORT = 3000;
 const server = express();
