@@ -22,12 +22,15 @@ nunjucks.configure('views', {
     express: server
 });
 
+server.get('/', (req, res) => {
+        res.render('index.html');
+});
+
 server.get('/teams', (req, res) => {
     TeamModel.find((err, teams) => {
         res.render('index.html', {test: teams});
     });
 });
-
 
 server.get('/route-handler', (req, res, next) => {
     res.send('is cool');
