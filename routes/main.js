@@ -25,17 +25,19 @@ router.get('/teams', (req, res) => {
     //res.render('index.html', {test: 'Rafael Oliveira'});
 });
 
-router.get(`/team/:id`, (req, res) => {
+router.get('/team/:id', (req, res) => {
     const id = req.params.id;
-    const student = _.find(students, student => student.id === req.params.id);
-    if(student)
+    TeamModel.findById(id, function(err, team)
     {
-        res.json(student);
-    }
-    else
-    {
-        res.send(`User ${req.params.id} not found`);
-    }
+        if(team)
+        {
+            res.json(team);
+        }
+        else
+        {
+            res.send(`User ${req.params.id} not found`);
+        }
+    });
 });
 
 router.post('/team', (req, res) => {
@@ -69,11 +71,11 @@ router.delete('/team', (req, res) => {
     res.end();
 });
 
-router.param('id', (req, res, next, id) => {
-    if(isNaN(id)) {
+/*router.param('id', (req, res, next, id) => {
+    /*if(isNaN(id)) {
         next(`${id} is not a valid number`);
     }
     next();
-})
+})*/
 
 module.exports = router;
